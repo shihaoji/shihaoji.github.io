@@ -1,0 +1,87 @@
+<html>
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 48%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+  <title>L0-ARM: Network Sparsification via Stochastic Binary Optimization</title>
+  </head>
+
+  <body bgcolor="#55555" alink="blue" vlink="navy">
+
+  <center>
+  <table width=80% cellpadding=10 bgcolor="white"><tr><td>
+
+  <table border="0" cellpadding="0" width="100%" style="width: 100%;">
+      <tbody>
+       <tr>
+       <!--<td style="padding: 0.75pt;" width="80" align="center">
+       <p class="MsoNormal">&nbsp;<img width="70" src="./histogram.jpg" alt="l0-arm"></p>
+       </td>-->
+       <td style="padding: 0.75pt;" align="center">
+       <p><span style="font-size: 16pt;">
+       <b><big>L0-ARM: Network Sparsification via Stochastic Binary Optimization</big></b></p>
+       </td>
+       </tr>
+       <tr>
+       <td style="padding: 0.75pt;" align="center">
+       <p></p>
+       </td>
+	   </tr>
+       <tr>
+       <td style="padding: 0.75pt;" align="center">
+       <p>Yang Li, and <a href="https://grid.cs.gsu.edu/~sji/">Shihao Ji</a></p>
+       </td>
+	   </tr>
+	   <tr>
+	   <td style="padding: 0.75pt;" align="center">
+       <p>Department of Computer Science</p>
+       </td>
+	   </tr>
+	   <tr>
+	   <td style="padding: 0.75pt;" align="center">
+       <p>Georgia State University</p>
+       </td>
+       </tr>
+      </tbody>
+  </table>
+ 
+  <hr size="2" width="100%" align="center">
+
+  <h3>Abstract</h3>
+    <p>We consider network sparsification as an L0-norm regularized binary optimization problem, where each unit of a neural network (e.g., weight, neuron, or channel, etc.) is attached with a stochastic binary gate, whose parameters are jointly optimized with original network parameters. The Augment-Reinforce-Merge (ARM), a recently proposed unbiased gradient estimator, is investigated for this binary optimization problem. Compared to the hard concrete gradient estimator from Louizos et al., ARM demonstrates superior performance of pruning network architectures while retaining almost the same accuracies of baseline methods. Similar to the hard concrete estimator, ARM also enables conditional computation during model training but with improved effectiveness due to the exact binary stochasticity. Thanks to the flexibility of ARM, many smooth or non-smooth parametric functions, such as scaled sigmoid or hard sigmoid, can be used to parameterize this binary optimization problem and the unbiasness of the ARM estimator is retained, while the hard concrete estimator has to rely on the hard sigmoid function to achieve conditional computation and thus accelerated training. Extensive experiments on multiple public datasets demonstrate state-of-the-art pruning rates with almost the same accuracies of baseline methods. The resulting algorithm L0-ARM sparsifies the Wide-ResNet models on CIFAR-10 and CIFAR-100 while the hard concrete estimator cannot. We plan to release our code to facilitate the research in this area.</p>
+  <hr>
+
+  <h3>Demo</h3>
+  <p>Visualization of part of the neurons in conv-layer and fully-connected layer of the LeNet-5-Caffe sparsified by L0-ARM. To achieve computational efficiency, only neuron-level (instead of weight-level) sparsification is considered. See <a href="https://arxiv.org/abs/1904.04432">the paper</a> for more details.</p>
+  <div class="row">
+    <div class="column">
+      <img src="conv_layer.gif" alt="conv" style="width:100%">
+    </div>
+    <div class="column">
+      <img src="fc_layer.gif" alt="fc" style="width:100%">
+    </div>
+  </div>  
+  <hr>
+
+  <h3>Paper</h3>
+  <p>Yang Li, Shihao Ji, "<b>L0-ARM: Network Sparsification via Stochastic Binary Optimization</b>,"  The European Conference on Machine Learning (ECML, acceptance rate 18%), Würzburg, Germany, Sept. 2019. [<a href="https://arxiv.org/abs/1904.04432">arXiv</a>]</p>
+  <p>&nbsp;</p>
+  
+</td></tr></table></center>
+</body>
+</html>
